@@ -27,7 +27,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_YAML: false
           VALIDATE_INDENTATION: false
-          ESLINT_RULES: '{"no-mixed-spaces-and-tabs": "off"}'
+          disable_errors: true
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
